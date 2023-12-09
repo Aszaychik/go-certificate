@@ -2,16 +2,16 @@ package pkg
 
 import (
 	"bytes"
+	"embed"
 	"html/template"
 
 	"github.com/SebastiaanKlippert/go-wkhtmltopdf"
 )
 
-func GenerateHtmlToPDF(htmlTemplate string, model interface{}) ([]byte, error) {
+func GenerateHtmlToPDF(htmlTemplate embed.FS, model interface{}) ([]byte, error) {
 	var htmlBuffer bytes.Buffer
-	err := template.Must(template.New("template").
-		Parse(htmlTemplate)).
-		Execute(&htmlBuffer, model)
+	certificateTemplate, err := template.ParseFS(htmlTemplate, "certificate.html")
+		err = certificateTemplate.Execute(&htmlBuffer, model)
 	if err != nil {
 		return nil, err
 	}
