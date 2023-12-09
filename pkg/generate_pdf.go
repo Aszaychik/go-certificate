@@ -27,7 +27,7 @@ func GenerateHtmlToPDF(htmlTemplate embed.FS, model interface{}) ([]byte, error)
 	pdfGen.MarginRight.Set(10)
 	pdfGen.Dpi.Set(300)
 	pdfGen.PageSize.Set(wkhtmltopdf.PageSizeA4)
-	pdfGen.Orientation.Set(wkhtmltopdf.OrientationPortrait)
+	pdfGen.Orientation.Set(wkhtmltopdf.OrientationLandscape)
 
 	// Generate the PDF
 	err = pdfGen.Create()
