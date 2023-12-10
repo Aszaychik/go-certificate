@@ -20,9 +20,9 @@
         font-family: 'Poppins', 'sans-serif';
       }
       .certificate-container {
-        max-width: 330mm; /* F4 paper width */
+        max-width: 297mm; /* A4 paper width */
         height: 80vh; /* 80% of the viewport height */
-        max-height: 210mm; /* F4 paper height */
+        max-height: 210mm; /* A4 paper height */
         background-image: url('https://firebasestorage.googleapis.com/v0/b/firestore-f55120048.appspot.com/o/Sertifikat2.png?alt=media&token=0ca6355a-0495-4686-83f5-c79bdd2a7c62'); /* Replace with your background image */
         background-size: cover;
         margin: 0 auto;
@@ -93,41 +93,33 @@
       }
     </style>
   </head>
-  <body>
-    <div class="container certificate-container">
-      <div class="d-flex flex-column align-items-end">
-        <div
-          class="d-flex flex-column align-items-center"
-          id="body-certificate"
-        >
-          <h1 class="h1 text-center alignitem" id="title-sertifikat">
-            SERTIFIKAT KOPETENSI KELULUSAN
-          </h1>
-          <p class="h3 text-center p-2 px-4" id="no-sertifikat">No. {{.ID}}</p>
-          <p class="h2 text-center text-dark" id="subtitle-sertifikat-name">
-            Diberikan Kepada
-          </p>
-          <p class="text-center" id="name-sertifikat">{{.Name}}</p>
-          <p class="h2 text-center text-dark" id="subtitle-sertifikat-course">
-            Atas Kelulusan Pada Kelas
-          </p>
-          <p class="text-center" id="course-sertifikat">{{.CourseName}}</p>
-        </div>
-        <div
-          class="d-flex flex-column align-items-center"
-          id="sign-certificate"
-        >
-          <p class="text-center" id="date-certificate">{{.IssuedAt}}</p>
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/firestore-f55120048.appspot.com/o/image%201.svg?alt=media&token=737aff2f-d549-41fc-b8ab-5d5fcdef6525"
-            alt=""
-            id="sign-img"
-          />
-          <p class="text-center" id="ceo-name">AGOES BUDI SATRIYA</p>
-          <p class="text-center" id="ceo-position">
-            Chief Officer Executive Harsa Edu
-          </p>
-        </div>
+  <body class="container certificate-container">
+    <div class="d-flex flex-column align-items-end">
+      <div class="d-flex flex-column align-items-center" id="body-certificate">
+        <h1 class="h1 text-center alignitem" id="title-sertifikat">
+          SERTIFIKAT KOPETENSI KELULUSAN
+        </h1>
+        <p class="h3 text-center p-2 px-4" id="no-sertifikat">No. {{.ID}}</p>
+        <p class="h2 text-center text-dark" id="subtitle-sertifikat-name">
+          Diberikan Kepada
+        </p>
+        <p class="text-center" id="name-sertifikat">{{.Name}}</p>
+        <p class="h2 text-center text-dark" id="subtitle-sertifikat-course">
+          Atas Kelulusan Pada Kelas
+        </p>
+        <p class="text-center" id="course-sertifikat">{{.CourseName}}</p>
+      </div>
+      <div class="d-flex flex-column align-items-center" id="sign-certificate">
+        <p class="text-center" id="date-certificate">{{.IssuedAt}}</p>
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/firestore-f55120048.appspot.com/o/image%201.svg?alt=media&token=737aff2f-d549-41fc-b8ab-5d5fcdef6525"
+          alt=""
+          id="sign-img"
+        />
+        <p class="text-center" id="ceo-name">AGOES BUDI SATRIYA</p>
+        <p class="text-center" id="ceo-position">
+          Chief Officer Executive Harsa Edu
+        </p>
       </div>
     </div>
 
