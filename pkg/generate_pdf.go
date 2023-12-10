@@ -23,9 +23,10 @@ func GenerateHtmlToPDF(htmlTemplate embed.FS, model interface{}) ([]byte, error)
 	}
 	page := wkhtmltopdf.NewPageReader(bytes.NewReader(htmlBuffer.Bytes()))
 	pdfGen.AddPage(page)
-	pdfGen.MarginLeft.Set(10)
-	pdfGen.MarginRight.Set(10)
-	pdfGen.Dpi.Set(300)
+	pdfGen.MarginBottom.Set(0)
+	pdfGen.MarginLeft.Set(0)
+	pdfGen.MarginRight.Set(0)
+	pdfGen.MarginTop.Set(0)
 	pdfGen.PageSize.Set(wkhtmltopdf.PageSizeA4)
 	pdfGen.Orientation.Set(wkhtmltopdf.OrientationLandscape)
 

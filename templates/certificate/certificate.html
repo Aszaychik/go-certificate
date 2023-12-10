@@ -20,11 +20,13 @@
         font-family: 'Poppins', 'sans-serif';
       }
       .certificate-container {
-        max-width: 297mm; /* A4 paper width */
-        height: 80vh; /* 80% of the viewport height */
-        max-height: 210mm; /* A4 paper height */
+        min-width: 297mm; /* A4 paper width */
+        height: 100vh; /* 80% of the viewport height */
+        min-height: 262mm; /* A4 paper height */
         background-image: url('https://firebasestorage.googleapis.com/v0/b/firestore-f55120048.appspot.com/o/Sertifikat2.png?alt=media&token=0ca6355a-0495-4686-83f5-c79bdd2a7c62'); /* Replace with your background image */
         background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         margin: 0 auto;
         text-align: center;
         color: #fff; /* Text color */
@@ -33,33 +35,36 @@
       #title-sertifikat {
         color: #aa379c;
         font-weight: 700;
-        padding-top: 9.5rem;
-        font-size: 3.3rem;
+        padding-top: 13rem;
+        font-size: 3.8rem;
       }
 
       #no-sertifikat {
         color: white;
         background-color: #213571;
         font-weight: 600;
-        padding-top: 0.5 rem;
+        margin-top: 0.8rem;
         width: fit-content;
         border-radius: 0.8rem;
+        font-size: 1.7rem;
       }
+
       #body-certificate {
         width: 100%;
       }
       #subtitle-sertifikat-name {
         font-size: 1.6rem;
-        margin-top: 1.2rem;
+        margin-top: 1rem;
+        margin-bottom: 0;
       }
       #name-sertifikat {
         color: #213571;
         font-weight: 700;
-        font-size: 3.2rem;
+        font-size: 3.7rem;
       }
       #subtitle-sertifikat-course {
         font-size: 1.6rem;
-        margin-top: 0.3rem;
+        margin-top: 0.6rem;
       }
       #course-sertifikat {
         color: #213571;
@@ -69,12 +74,13 @@
       #date-certificate {
         font-size: 1.2rem;
         font-weight: 600;
-        margin-top: 0.3rem;
+        margin-top: 2rem;
         color: black;
         margin-bottom: 0.4rem;
       }
       #sign-certificate {
-        margin-right: 12rem;
+        margin-top: 4rem;
+        margin-right: 1rem;
       }
       #sign-img {
         height: 5rem;
@@ -99,7 +105,7 @@
         <h1 class="h1 text-center alignitem" id="title-sertifikat">
           SERTIFIKAT KOPETENSI KELULUSAN
         </h1>
-        <p class="h3 text-center p-2 px-4" id="no-sertifikat">No. {{.ID}}</p>
+        <p class="text-center p-2 px-4" id="no-sertifikat">No. {{.ID}}</p>
         <p class="h2 text-center text-dark" id="subtitle-sertifikat-name">
           Diberikan Kepada
         </p>
@@ -112,7 +118,7 @@
       <div class="d-flex flex-column align-items-center" id="sign-certificate">
         <p class="text-center" id="date-certificate">{{.IssuedAt}}</p>
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/firestore-f55120048.appspot.com/o/image%201.svg?alt=media&token=737aff2f-d549-41fc-b8ab-5d5fcdef6525"
+          src="https://firebasestorage.googleapis.com/v0/b/firestore-f55120048.appspot.com/o/sign.png?alt=media&token=291d5410-ccaa-416b-b95f-2f84506fdd7e"
           alt=""
           id="sign-img"
         />
