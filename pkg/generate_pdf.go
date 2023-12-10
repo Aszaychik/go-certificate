@@ -11,7 +11,7 @@ import (
 func GenerateHtmlToPDF(htmlTemplate embed.FS, model interface{}) ([]byte, error) {
 	var htmlBuffer bytes.Buffer
 	certificateTemplate, err := template.ParseFS(htmlTemplate, "certificate.html")
-		err = certificateTemplate.Execute(&htmlBuffer, model)
+	err = certificateTemplate.Execute(&htmlBuffer, model)
 	if err != nil {
 		return nil, err
 	}
