@@ -3,9 +3,10 @@ package main
 import (
 	"go-certificate/models"
 	"go-certificate/pkg"
-	"go-certificate/templates"
+	certificateTemplate "go-certificate/templates/certificate"
 	"html/template"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/google/uuid"
@@ -13,13 +14,16 @@ import (
 
 func main() {
 	certificate := models.Certificate{
-    ID: uuid.NewString(),
+		ID: uuid.NewString(),
     Name: "AsZaychik",
     CourseName: "Go Backend",
-    Date: time.Now(),
+    CreatedAt: time.Now().UTC(),
   }
-
-	embedTemplate := templates.CertificateBlankContent
+	
+	tookDate := strings.Split(certificate.CreatedAt.String(), " ")
+	certificate.IssuedAt = tookDate[0]
+	
+	embedTemplate := certificateTemplate.CertificateBlankContent
 
 	// render the HTML template on the index route
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {

@@ -6,5 +6,6 @@ type Certificate struct {
 	ID         string
 	Name       string
 	CourseName string
-	Date       time.Time
+	CreatedAt  time.Time
+	IssuedAt   string
 }
